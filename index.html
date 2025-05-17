@@ -3,149 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to my Website</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-    }
-
-    header {
-      background-color: #4CAF50;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .content {
-      padding: 20px;
-      text-align: center;
-    }
-
-    .content img {
-      max-width: 90%;
-      height: auto;
-      border: 2px solid #ccc;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
-
-    footer {
-      background-color: #222;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      position: relative;
-      bottom: 0;
-      width: 100%;
-      margin-top: 40px;
-    }
-  </style>
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <header>
-    <h1>My Website</h1>
+    <div class="container">
+      <h1>Hi, I'm <span class="highlight">Jesver Kim S.Loyola</span></h1>
+      <p>Web Developer | Designer | Creative Thinker</p>
+      <a href="#contact" class="btn">Contact Me</a>
+    </div>
   </header>
 
-  <div class="content">
-    <h2>Lagayan ng Larawan</h2>
-    <img src="IDPhoto_20240805_120801.jpg" alt="Larawan ko"
-  </div>
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>Hello! I'm Loyola, a passionate web developer based in [Your Location]. I specialize in building modern, responsive websites using HTML, CSS, and JavaScript.
+
+I love turning ideas into real, user-friendly websites that not only look good but also perform well across devices. Whether it's a simple landing page or a complete portfolio, I focus on clean code and engaging design.
+
+I'm always eager to learn new technologies, explore creative solutions, and grow as a developer. Outside of coding, I enjoy exploring UI/UX trends, improving my skills, and sometimes just relaxing with music or a good coffee.
+
+If you're looking for someone reliable, creative, and dedicated to delivering high-quality work—I'm excited to collaborate!
+        I’m a passionate web developer with experience in creating beautiful and responsive websites using HTML, CSS, and JavaScript.</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2>My Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">Project 1</div>
+        <div class="project-card">Project 2</div>
+        <div class="project-card">Project 3</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </section>
 
   <footer>
-    &copy; 2025 Aking Website. Lahat ng karapatan ay nakalaan.
+    <p>&copy; 2025 Your Name. All Rights Reserved.</p>
   </footer>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Floating Button Effect</title>
-<style>
-  body {
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background: #f5f5f5;
-  }
-
-  .floating-button {
-    position: relative;
-    background-color: #6200ea;
-    color: white;
-    border: none;
-    border-radius: 50px;
-    padding: 15px 30px;
-    font-size: 18px;
-    cursor: pointer;
-    box-shadow: 0 6px 10px rgba(98, 0, 234, 0.4);
-    transition: box-shadow 0.3s ease, transform 0.2s ease;
-    overflow: hidden;
-  }
-
-  /* Lumulutang effect kapag naka-hover */
-  .floating-button:hover {
-    box-shadow: 0 12px 20px rgba(98, 0, 234, 0.6);
-    transform: translateY(-6px);
-  }
-
-  /* Lumulutang effect kapag naka-press */
-  .floating-button:active {
-    box-shadow: 0 4px 8px rgba(98, 0, 234, 0.3);
-    transform: translateY(-2px);
-  }
-
-  /* Ripple Effect */
-  .ripple {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.7);
-    animation: ripple-animation 0.6s linear;
-    pointer-events: none;
-    transform: scale(0);
-  }
-
-  @keyframes ripple-animation {
-    to {
-      transform: scale(4);
-      opacity: 0;
-    }
-  }
-</style>
-</head>
-<body>
-
-<button class="floating-button">Click Me</button>
-
-<script>
-  const button = document.querySelector('.floating-button');
-
-  button.addEventListener('click', function (e) {
-    const ripple = document.createElement('span');
-    ripple.classList.add('ripple');
-
-    const rect = button.getBoundingClientRect();
-    const size = Math.max(rect.width, rect.height);
-    ripple.style.width = ripple.style.height = size + 'px';
-
-    // Position ripple in the click position relative to button
-    ripple.style.left = e.clientX - rect.left - size / 2 + 'px';
-    ripple.style.top = e.clientY - rect.top - size / 2 + 'px';
-
-    button.appendChild(ripple);
-
-    // Remove the ripple after animation
-    ripple.addEventListener('animationend', () => {
-      ripple.remove();
-    });
-  });
-</script>
 
 </body>
 </html>
