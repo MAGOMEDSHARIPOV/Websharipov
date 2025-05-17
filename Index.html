@@ -107,6 +107,34 @@
     <a href="https://instagram.com/yourprofile" target="_blank">Instagram</a>
   </div>
   </section>
+<script>
+  const name = "Juan Dela Cruz"; // ← Palitan ng pangalan mo
+  const target = document.querySelector(".typed-name");
+  let i = 0;
+
+  function typeName() {
+    if (i < name.length) {
+      target.textContent += name.charAt(i);
+      i++;
+      setTimeout(typeName, 150);
+    }
+  }
+
+  typeName();
+
+  // Scroll animation
+  function revealOnScroll() {
+    const reveals = document.querySelectorAll('.scroll-reveal');
+    reveals.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        el.classList.add('show');
+      }
+    });
+  }
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('load', revealOnScroll);
+</script>
 </body>
 
   <header>
